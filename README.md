@@ -1,4 +1,11 @@
-![Terminal Hero](./assets/terminal-typing.svg)
+<picture>
+  <!-- Preferred: webm video (if available) -->
+  <source srcset="./assets/terminal-typing.webm" type="video/webm">
+  <!-- Fallback GIF (if webm not supported) -->
+  <source srcset="./assets/terminal-typing.gif" type="image/gif">
+  <!-- Final fallback: inline animated SVG (supported by GitHub), or static PNG if SVG animations are blocked -->
+  <img src="./assets/terminal-typing.svg" alt="Terminal typing animation" />
+</picture>
 
 <p align="left">
   <img src="https://img.shields.io/badge/mode-terminal-%23000f06?style=for-the-badge" alt="terminal" />
@@ -10,7 +17,7 @@
 
 # hi — i'm david (aka hikari)
 
-I build production-grade infrastructure where autonomous agents pay for APIs and systems settle on-chain. This profile blends a terminal/hacker aesthetic with structured, depth-first technical writeups. Everything is still readable — <em>just the right amount of geek</em>.
+I build production-grade infrastructure where autonomous agents pay for APIs and systems settle on-chain. This profile blends a terminal/hacker aesthetic with structured, depth-first technical writeups. Everything is still readable — just the right amount of geek.
 
 ---
 
@@ -258,6 +265,50 @@ corepack pnpm e2e:negative
 
 ---
 
+## playback compatibility & how to export webm/gif
+
+GitHub renders animated SVGs inline, but some platforms and previewers prefer webm/gif.
+
+To export high-quality webm and a GIF fallback from the SVG locally, run (requires ffmpeg + librsvg):
+
+```bash
+# render SVG to PNG sequence (rsvg-convert or inkscape)
+rsvg-convert -w 980 -h 260 assets/terminal-typing.svg -o /tmp/frame-%03d.png
+
+# or with inkscape (single frame per second of animation isn't trivial)
+# Use a headless renderer that can step through SVG animations, or use a browser-based capture.
+
+# then assemble into webm
+ffmpeg -framerate 30 -i /tmp/frame-%03d.png -c:v libvpx-vp9 -crf 30 -b:v 0 -pix_fmt yuva420p assets/terminal-typing.webm
+
+# generate GIF (larger)
+ffmpeg -f webm -i assets/terminal-typing.webm -vf "fps=20,scale=980:-1:flags=lanczos" -loop 0 assets/terminal-typing.gif
+```
+
+Note: Rendering animated SVG frames reliably often requires a headless browser capture (Puppeteer) to snapshot frames because many command-line SVG renderers don't evaluate SMIL/CSS animations.
+
+Example using Puppeteer:
+
+```js
+// capture.js
+const puppeteer = require('puppeteer');
+(async () => {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.setContent(`<html><body>${require('fs').readFileSync('assets/terminal-typing.svg','utf8')}</body></html>`);
+  await page.setViewport({ width: 980, height: 260 });
+  for (let i = 0; i < 180; i++) {
+    await page.screenshot({ path: `/tmp/frame-${String(i).padStart(3,'0')}.png` });
+    await page.waitForTimeout(33);
+  }
+  await browser.close();
+})();
+```
+
+Then assemble the PNGs into webm/gif as above.
+
+---
+
 ## security & verification highlights
 
 - Foundry: 37 unit tests + 4 invariant tests (handler reached 128k calls in runs)
@@ -286,10 +337,6 @@ corepack pnpm e2e:negative
 - https://github.com/HikariDavid/Prediction-market-Oracle — autonomous markets
 - https://github.com/HikariDavid/jamify-kenya-traffic-app — traffic intelligence
 - https://github.com/HikariDavid/SoulPrints — matching & personality engine
-- https://github.com/HikariDavid/jamify-traffic-collector
-- https://github.com/HikariDavid/cloud9cream
-
-> Note: repo list is not exhaustive. See my profile for the complete set.
 
 ---
 
