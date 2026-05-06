@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="260" viewBox="0 0 980 260" role="img" aria-label="Terminal typing animation">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0%" stop-color="#02f58c"/>
+      <stop offset="100%" stop-color="#00ff6a"/>
+    </linearGradient>
+    <mask id="reveal">
+      <rect x="0" y="0" width="0" height="100%" fill="#fff">
+        <animate attributeName="width" from="0" to="980" dur="4.8s" begin="0.2s" fill="freeze" />
+      </rect>
+    </mask>
+  </defs>
+  <rect width="100%" height="100%" fill="#000f06" />
+
+  <!-- title -->
+  <text x="28" y="46" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace" font-size="28" fill="#02f58c">&gt; hi — i'm david (aka hikari)</text>
+
+  <!-- typing line with mask reveal -->
+  <g transform="translate(28,96)" mask="url(#reveal)">
+    <text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace" font-size="18" fill="#02f58c">$ echo "I build infra where AI agents pay for APIs — secure, realtime, auditable."</text>
+  </g>
+
+  <!-- blinking cursor (appears after typing) -->
+  <rect x="720" y="76" width="10" height="18" fill="#02f58c" opacity="1">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" begin="5s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- small code snippet box -->
+  <g transform="translate(28,140)">
+    <rect x="0" y="0" width="920" height="86" rx="8" fill="#00120a" stroke="#02331f" />
+    <text x="12" y="24" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace" font-size="13" fill="#8bf8b0">// my one-line stack</text>
+    <text x="12" y="46" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace" font-size="14" fill="#c8ffda">const stack = "TypeScript · Solidity · Python · Node · Postgres"</text>
+    <text x="12" y="68" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace" font-size="12" fill="#6fbf86">// fast, audited, realtime</text>
+  </g>
+
+  <!-- footer small flicker -->
+  <text x="28" y="242" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace" font-size="11" fill="#064f2b" opacity="0.9">~ terminal • hackerish • animated</text>
+
+</svg>
