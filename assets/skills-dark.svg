@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="320" viewBox="0 0 900 320">
+  <style>
+    .bg { fill: #07101d; }
+    .card { fill: #071827; stroke: #0f2233; stroke-width:1; rx:12; }
+    .label { fill: #cfe8ff; font-family: 'Inter', sans-serif; font-size:16px; }
+    .percent { fill: #9fb4d6; font-family: 'Inter', sans-serif; font-size:14px; }
+    .bar-bg { fill: #0f2233; rx:6; }
+    .bar-fill { fill: url(#g); rx:6; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace; }
+    @keyframes grow { from { width:0 } to { width: var(--w) } }
+  </style>
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0%" stop-color="#7b61ff"/>
+      <stop offset="50%" stop-color="#00e0ff"/>
+      <stop offset="100%" stop-color="#7b61ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="#07101d" />
+  <g transform="translate(30,18)">
+    <text class="label" x="0" y="18" style="font-size:18px;">Skills</text>
+    <text class="percent" x="800" y="18" style="text-anchor:end;">Proficiency</text>
+
+    <!-- TypeScript -->
+    <text class="label" x="0" y="64">TypeScript</text>
+    <text class="percent" x="800" y="64" style="text-anchor:end;">95%</text>
+    <rect class="bar-bg" x="0" y="72" width="820" height="14" rx="7" />
+    <rect class="bar-fill" x="0" y="72" width="0" height="14" rx="7" style="--w:780px; animation: 1.2s ease-out 0.2s forwards grow;" />
+
+    <!-- Solidity -->
+    <text class="label" x="0" y="116">Solidity</text>
+    <text class="percent" x="800" y="116" style="text-anchor:end;">75%</text>
+    <rect class="bar-bg" x="0" y="124" width="820" height="14" rx="7" />
+    <rect class="bar-fill" x="0" y="124" width="0" height="14" rx="7" style="--w:620px; animation: 1.2s ease-out 0.4s forwards grow;" />
+
+    <!-- Python -->
+    <text class="label" x="0" y="168">Python</text>
+    <text class="percent" x="800" y="168" style="text-anchor:end;">70%</text>
+    <rect class="bar-bg" x="0" y="176" width="820" height="14" rx="7" />
+    <rect class="bar-fill" x="0" y="176" width="0" height="14" rx="7" style="--w:580px; animation: 1.2s ease-out 0.6s forwards grow;" />
+
+    <!-- JavaScript -->
+    <text class="label" x="0" y="220">JavaScript</text>
+    <text class="percent" x="800" y="220" style="text-anchor:end;">60%</text>
+    <rect class="bar-bg" x="0" y="228" width="820" height="14" rx="7" />
+    <rect class="bar-fill" x="0" y="228" width="0" height="14" rx="7" style="--w:500px; animation: 1.2s ease-out 0.8s forwards grow;" />
+
+    <!-- SQL -->
+    <text class="label" x="0" y="272">SQL</text>
+    <text class="percent" x="800" y="272" style="text-anchor:end;">50%</text>
+    <rect class="bar-bg" x="0" y="280" width="820" height="14" rx="7" />
+    <rect class="bar-fill" x="0" y="280" width="0" height="14" rx="7" style="--w:420px; animation: 1.2s ease-out 1s forwards grow;" />
+
+  </g>
+</svg>
