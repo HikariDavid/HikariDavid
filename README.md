@@ -1,4 +1,4 @@
-![Hero](./assets/hero-dark.svg)
+![Hero](./assets/hero-animated.svg)
 
 <p align="center"> 
   <img src="https://img.shields.io/badge/TypeScript-95%25-3178c6?style=for-the-badge&logo=typescript" alt="TS"/>
@@ -12,7 +12,7 @@ I build production-grade infrastructure where AI agents, APIs, and blockchains m
 
 ---
 
-![Skills](./assets/skills-dark.svg)
+![Skills](./assets/skills-animated.svg)
 
 ## What I build (high-level)
 - Parametric insurance systems that auto-settle claims on-chain

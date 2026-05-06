@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="HikariDavid animated hero">
+  <defs>
+    <linearGradient id="g2" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#7b61ff"/>
+      <stop offset="50%" stop-color="#00e0ff"/>
+      <stop offset="100%" stop-color="#7b61ff"/>
+    </linearGradient>
+    <radialGradient id="pulse" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#7b61ff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#07101d" />
+
+  <!-- subtle particle field -->
+  <g id="particles" fill="#0f2233" opacity="0.8">
+    <circle cx="110" cy="40" r="2" fill="#0b2540">
+      <animate attributeName="cy" values="40;36;40" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="110;120;110" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="240" cy="30" r="1.6" fill="#0b2540">
+      <animate attributeName="cy" values="30;24;30" dur="5.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="420" cy="50" r="2.2" fill="#0b2540">
+      <animate attributeName="cx" values="420;440;420" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="680" cy="20" r="1.4" fill="#0b2540">
+      <animate attributeName="cy" values="20;12;20" dur="5.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="960" cy="48" r="1.8" fill="#0b2540">
+      <animate attributeName="cx" values="960;980;960" dur="6.4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- headline group -->
+  <g transform="translate(64,110)">
+    <text x="0" y="0" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto" font-size="56" font-weight="700" fill="url(#g2)">
+      <tspan id="name">HikariDavid</tspan>
+    </text>
+
+    <!-- typing subtitle effect -->
+    <text x="0" y="50" font-family="Inter, system-ui" font-size="18" fill="#9fb4d6">
+      <tspan id="subtitle">Infrastructure for Autonomous Agents</tspan>
+      <tspan x="0" dy="28" font-size="14" fill="#6f8aa1">Blockchain · AI · Real-time</tspan>
+    </text>
+
+    <!-- animated underline pulse -->
+    <g transform="translate(0,70)">
+      <rect x="0" y="0" width="640" height="6" rx="3" fill="#0f2233" />
+      <rect x="-160" y="0" width="300" height="6" rx="3" fill="url(#g2)">
+        <animate attributeName="x" from="-160" to="740" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <circle cx="40" cy="3" r="16" fill="url(#pulse)" opacity="0.6">
+        <animate attributeName="r" values="8;24;8" dur="3.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.45;0;0.45" dur="3.6s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+  </g>
+
+  <!-- subtle corner badge -->
+  <g transform="translate(960,40)">
+    <rect x="0" y="0" width="220" height="56" rx="10" fill="#071827" stroke="#12283b" />
+    <text x="18" y="24" font-family="Inter, system-ui" font-size="13" fill="#cfe8ff">TypeScript · Solidity · Python</text>
+    <text x="18" y="42" font-family="Inter, system-ui" font-size="11" fill="#6f8aa1">Production · Real-time · Secure</text>
+  </g>
+
+</svg>
